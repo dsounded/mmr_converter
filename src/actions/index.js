@@ -11,3 +11,10 @@ export const changeRank = (rank) => {
     rank
   }
 }
+
+export const clickAlert = (checked) => {
+  return {
+    type: 'CHANGE_ALERT',
+    checked
+  }
+}

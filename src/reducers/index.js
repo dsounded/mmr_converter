@@ -3,7 +3,10 @@ import { mmrMap } from '../components/mmr_observer'
 let defaultState = {
   points: null,
   rank: '',
-  inputting: true
+  inputting: true,
+  checked: false,
+  title: 'HeyHey Alert',
+  value: 'POWPOW'
 }
 
 const appState = (state = defaultState, action) => {
@@ -31,6 +34,12 @@ const appState = (state = defaultState, action) => {
           points: points,
           rank: rank,
           inputting: false
+        }
+    case 'CHANGE_ALERT':
+      const checked = action.checked;
+      return {
+          ...state,
+          checked: checked
         }
     default:
       return state
