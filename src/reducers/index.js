@@ -6,7 +6,8 @@ let defaultState = {
   inputting: true,
   checked: false,
   title: 'HeyHey Alert',
-  value: 'POWPOW'
+  value: 'POWPOW',
+  records: []
 }
 
 const appState = (state = defaultState, action) => {
@@ -14,11 +15,17 @@ const appState = (state = defaultState, action) => {
   let rank;
 
   switch (action.type) {
+    case 'DOGS_FETCHED':
+      return {
+        ...state,
+        records: action.records
+      }
     case 'CHANGE_POINTS':
       points = action.points;
       const titleKey = Object.keys(mmrMap).filter((mmrPoint, _) => parseInt(action.points) >= mmrPoint).pop();
       rank = points == '' ? '' : mmrMap[titleKey];
       return {
+          ...state,
           points: points,
           rank: rank,
           inputting: true
@@ -31,6 +38,7 @@ const appState = (state = defaultState, action) => {
       points = rank == '' ? '' : points;
 
       return {
+          ...state,
           points: points,
           rank: rank,
           inputting: false
