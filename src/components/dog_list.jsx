@@ -14,7 +14,7 @@ export default class DogList extends React.Component {
     return (
       <ul>
         {
-          this.props.records.map(record => <li>{record}</li>)
+          this.props.records.map(record => <li key={record}>{record}</li>)
         }
       </ul>
     )
