@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-import { changePoints, changeRank } from '../actions';
+import { changePoints, changeRank } from '../actions/mmr_actions';
 
 let MMRInputs = ({ dispatch, showPlus, points, rank }) => {
   return (
@@ -26,9 +26,9 @@ let MMRInputs = ({ dispatch, showPlus, points, rank }) => {
 
 const mapStateToProps = state => {
   return {
-    showPlus: !state.inputting,
-    points: state.points,
-    rank: state.rank
+    showPlus: !state.mmr.inputting,
+    points: state.mmr.points,
+    rank: state.mmr.rank
   }
 }
 

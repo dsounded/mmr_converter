@@ -4,8 +4,8 @@ import Alert from '../components/alert';
 
 const mapStateToProps = state => {
   return {
-    value: state.value,
-    checked: state.checked
+    value: state.dogs.value,
+    checked: state.dogs.checked
   }
 }
 

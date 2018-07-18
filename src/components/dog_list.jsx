@@ -1,5 +1,5 @@
 import React from 'react';
-import { removeDog, editDog } from '../actions';
+import { removeDog, editDog } from '../actions/dog_actions';
 import DogEditBox from '../components/dog_edit_box'
 
 export default class DogList extends React.Component {

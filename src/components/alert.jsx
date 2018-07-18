@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { clickAlert } from '../actions'
+import { clickAlert } from '../actions/dog_actions'
 
 const Alert = ({ dispatch, checked, value }) => {
   return (
