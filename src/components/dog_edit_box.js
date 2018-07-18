@@ -1,5 +1,5 @@
 import React from 'react';
-import { saveDog, changeDog } from '../actions'
+import { saveDog, changeDog } from '../actions/dog_actions'
 
 const DogList = ({dispatch, value, initialValue}) => {
   return (

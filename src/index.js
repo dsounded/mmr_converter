@@ -2,9 +2,10 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import './index.css';
-import reducer from './reducers'
+import DogReducer from './reducers/dog_reducer'
+import MMRReducer from './reducers/mmr_reducer'
 
 import createSagaMiddleware from 'redux-saga';
 
@@ -15,6 +16,11 @@ import App from './containers/app';
 <div id="root"></div>
 
 const sagaMiddleware = createSagaMiddleware();
+
+const reducer = combineReducers({
+  dogs: DogReducer,
+  mmr: MMRReducer
+});
 
 const store = createStore(
   reducer,

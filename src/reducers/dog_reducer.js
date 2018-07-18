@@ -1,19 +1,11 @@
-import { mmrMap } from '../components/mmr_observer'
-
 let defaultState = {
-  points: null,
-  rank: '',
-  inputting: true,
   checked: false,
   title: 'HeyHey Alert',
   value: 'POWPOW',
   records: []
 }
 
-const appState = (state = defaultState, action) => {
-  let points;
-  let rank;
-
+const DogReducer = (state = defaultState, action) => {
   switch (action.type) {
     case 'DOGS_FETCHED':
       const recordObjects = action.records.map(record => ({ text: record, isInput: false }))
@@ -49,29 +41,6 @@ const appState = (state = defaultState, action) => {
           ...state,
           records: updatedRecords
         }
-    case 'CHANGE_POINTS':
-      points = action.points;
-      const titleKey = Object.keys(mmrMap).filter((mmrPoint, _) => parseInt(action.points) >= mmrPoint).pop();
-      rank = points === '' ? '' : mmrMap[titleKey];
-      return {
-          ...state,
-          points: points,
-          rank: rank,
-          inputting: true
-        }
-    case 'CHANGE_RANK':
-      rank = action.rank;
-      const values = Object.values(mmrMap);
-      const pointsIndex = values.indexOf(rank);
-      points = Object.keys(mmrMap)[pointsIndex];
-      points = rank === '' ? '' : points;
-
-      return {
-          ...state,
-          points: points,
-          rank: rank,
-          inputting: false
-        }
     case 'CHANGE_ALERT':
       const checked = action.checked;
       return {
@@ -83,4 +52,4 @@ const appState = (state = defaultState, action) => {
   }
 }
 
-export default appState;
+export default DogReducer;
