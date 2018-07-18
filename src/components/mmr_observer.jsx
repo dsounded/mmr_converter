@@ -9,7 +9,7 @@ export const mmrMap = { 0: 'Herald', 840: 'Guardian', 1680: 'Crusader', 2520: 'A
 const MMRObserver = (props) => {
   return (
     <div>
-      <Labels.TopLabelH1 title ='MMR/Rank converter' />
+      <Labels.TopLabelH1 title = 'MMR/Rank converter' />
       <MMRInputs />
     </div>
   )

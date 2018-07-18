@@ -18,3 +18,33 @@ export const clickAlert = (checked) => {
     checked
   }
 }
+
+export const removeDog = (id) => {
+  return {
+    type: 'DOG_REMOVED',
+    id
+  }
+}
+
+export const editDog = (id) => {
+  return {
+    type: 'DOG_EDIT',
+    id
+  }
+}
+
+export const saveDog = (oldName, newName) => {
+  return {
+    type: 'DOG_UPDATE',
+    oldName,
+    newName
+  }
+}
+
+export const changeDog = (oldName, currentName) => {
+  return {
+    type: 'DOG_CHANGE',
+    oldName,
+    currentName
+  }
+}

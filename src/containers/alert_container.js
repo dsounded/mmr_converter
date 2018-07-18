@@ -1,7 +1,5 @@
-import React from 'react';
 import { connect } from 'react-redux'
 
-import { changePoints, changeRank } from '../actions';
 import Alert from '../components/alert';
 
 const mapStateToProps = state => {
